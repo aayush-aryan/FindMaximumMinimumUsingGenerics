@@ -14,28 +14,28 @@ namespace FindMaximumMinimumTest
             findMaximumMinimum = new FindMaximumMinimum();
         }
         [TestMethod]
-        public void TestFirstFloatValue()
+        public void TestFirstStringValue()
         {
-            float firstNumber = 8.9f, secondNumber = 4.5f, thirdNumber = 6.7f;
-            float expectedValue = firstNumber;
-            float actualValue = FindMaximumMinimum.FindMaximumFloatValue(firstNumber, secondNumber, thirdNumber);
+            string firstString = "Peach", secondString = "Apple", thirdString = "Bananna";
+            string expectedValue = firstString;
+            string actualValue = FindMaximumMinimum.FindMaximumStringValue(firstString, secondString, thirdString);
             Assert.AreEqual(expectedValue, actualValue);
         }
         [TestMethod]
         public void TestSecondFloatValue()
         {
-            float firstNumber = 4.5f, secondNumber = 8.9f, thirdNumber = 6.7f;
-            float expectedValue = secondNumber;
-            float actualValue = FindMaximumMinimum.FindMaximumFloatValue(firstNumber, secondNumber, thirdNumber);
+            string firstString = "Apple", secondString = "Peach", thirdString = "Bananna";
+            string expectedValue = secondString;
+            string actualValue = FindMaximumMinimum.FindMaximumStringValue(firstString, secondString, thirdString);
             Assert.AreEqual(expectedValue, actualValue);
         }
         [TestMethod]
         public void TestThirdFloatValue()
         {
-            float firstNumber = 4.5f, secondNumber = 6.7f, thirdNumber = 8.9f;
-            float expectedValue = thirdNumber;
+            string firstString = "Apple", secondString = "Bananna", thirdString = "Peach";
+            string expectedValue = thirdString;
 
-            float actualValue = FindMaximumMinimum.FindMaximumFloatValue(firstNumber, secondNumber, thirdNumber);
+            string actualValue = FindMaximumMinimum.FindMaximumStringValue(firstString, secondString, thirdString);
             Assert.AreEqual(expectedValue, actualValue);
         }
     }

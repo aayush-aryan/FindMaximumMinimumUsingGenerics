@@ -4,26 +4,29 @@ using System.Text;
 
 namespace FindMaximumMinimumProblemUsingGenerics
 {
+    /// <summary>
+    /// method returns Maximum String value;
+    /// </summary>
     public class FindMaximumMinimum
     {
-        public static float FindMaximumFloatValue(float firstNumber, float secondNumber, float thirdNumber)
+        public static string FindMaximumStringValue(string firstString, string secondString, string thirdString)
         {
-            if (firstNumber.CompareTo(secondNumber) > 0 && firstNumber.CompareTo(thirdNumber) > 0)
+            if (firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) > 0)
             {
-                return firstNumber;
+                return firstString;
             }
-            else if (secondNumber.CompareTo(firstNumber) > 0 && secondNumber.CompareTo(thirdNumber) > 0)
+            else if (secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) > 0)
             {
-                return secondNumber;
+                return secondString;
             }
-            else if (thirdNumber.CompareTo(firstNumber) > 0 && thirdNumber.CompareTo(secondNumber) > 0)
+            else if (thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) > 0)
             {
-                return thirdNumber;
+                return thirdString;
             }
             else
             {
-                Console.WriteLine("maximum number not found i.e they are equals");
-                return -1;
+                Console.WriteLine("maximum string not found i.e they are equals");
+                return "-1";
             }
         }
     }
