@@ -1,1 +1,1 @@
-# LineComprasion
+# FindMaximumMinimumProblemUsingGenerics
