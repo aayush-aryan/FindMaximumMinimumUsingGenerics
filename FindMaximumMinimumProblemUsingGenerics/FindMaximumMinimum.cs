@@ -6,7 +6,7 @@ namespace FindMaximumMinimumProblemUsingGenerics
 {
     public class FindMaximumMinimum
     {
-        public static int FindMaximumInteger(int firstNumber, int secondNumber, int thirdNumber)
+        public static float FindMaximumFloatValue(float firstNumber, float secondNumber, float thirdNumber)
         {
             if (firstNumber.CompareTo(secondNumber) > 0 && firstNumber.CompareTo(thirdNumber) > 0)
             {
@@ -25,7 +25,6 @@ namespace FindMaximumMinimumProblemUsingGenerics
                 Console.WriteLine("maximum number not found i.e they are equals");
                 return -1;
             }
-
         }
     }
 }

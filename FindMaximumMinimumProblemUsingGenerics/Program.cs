@@ -7,8 +7,8 @@ namespace FindMaximumMinimumProblemUsingGenerics
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Find Maximum Minimum Problem Using Generics :");
-            int maximumNumber=FindMaximumMinimum.FindMaximumInteger(70, 80, 90);
-            Console.WriteLine("Maximum Integers is :{0}", maximumNumber);
+            float maximumNumber=FindMaximumMinimum.FindMaximumFloatValue(2.0f, 3.01f, 4.2f);
+            Console.WriteLine("Maximum floatValue :", maximumNumber);
         }
     }
 }
