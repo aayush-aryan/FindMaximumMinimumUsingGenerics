@@ -4,36 +4,63 @@ using System.Text;
 
 namespace FindMaximumMinimumProblemUsingGenerics
 {
-    public class FindMaximumMinimum
+    public class FindMaximumMinimum<T> where T : IComparable
     {
+        public  T firstValue, secondValue, thirdValue;
+
+        public FindMaximumMinimum()
+        {  
+        }
+
+        /// <summary>
+        /// Parametrised constructor;
+        /// </summary>
+        /// <param name="firstValue"></param>
+        /// <param name="secondValue"></param>
+        /// <param name="thirdValue"></param>
+        public FindMaximumMinimum(T firstValue, T secondValue, T thirdValue)
+        {
+            this.firstValue = firstValue;
+            this.secondValue = secondValue;
+            this.thirdValue = thirdValue;
+        }
         /// <summary>
         /// IComparable interface defines a generalized type-specific comparison method that 
         /// a value type or class implements to order or sort its instances.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="firstString"></param>
-        /// <param name="secondString"></param>
-        /// <param name="thirdString"></param>
+        /// <param name="firstValue"></param>
+        /// <param name="secondValue"></param>
+        /// <param name="thirdValue"></param>
         /// <returns></returns>
-        public static T FindMaximumGenericValue<T>(T firstString, T secondString, T thirdString) where T : IComparable
+
+        public static T FindMaximumGenericValue(T firstValue, T secondValue, T thirdValue)
         {
-            if (firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) > 0)
+            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
             {
-                return firstString;
+                return firstValue;
             }
-            else if (secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) > 0)
+            else if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
             {
-                return secondString;
+                return secondValue;
             }
-            else if (thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) > 0)
+            else if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0)
             {
-                return thirdString;
+                return thirdValue;
             }
             else
             {
-                Console.WriteLine("maximum string not found i.e they are equals");
-                return default(T);
+                //Console.WriteLine("maximum string not found i.e they are equals");
+                // return default(T);
+                throw new Exception("All three values are same");
             }
+
+        }
+        //Maximum method
+        public  T MaximumValue()
+        {
+            T max = FindMaximumMinimum<T>.FindMaximumGenericValue(firstValue, secondValue, thirdValue);
+            return max;
         }
     }
 }
