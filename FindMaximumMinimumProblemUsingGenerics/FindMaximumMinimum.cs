@@ -6,61 +6,60 @@ namespace FindMaximumMinimumProblemUsingGenerics
 {
     public class FindMaximumMinimum<T> where T : IComparable
     {
-        public  T firstValue, secondValue, thirdValue;
-
-        public FindMaximumMinimum()
-        {  
-        }
-
-        /// <summary>
-        /// Parametrised constructor;
-        /// </summary>
-        /// <param name="firstValue"></param>
-        /// <param name="secondValue"></param>
-        /// <param name="thirdValue"></param>
-        public FindMaximumMinimum(T firstValue, T secondValue, T thirdValue)
-        {
-            this.firstValue = firstValue;
-            this.secondValue = secondValue;
-            this.thirdValue = thirdValue;
-        }
         /// <summary>
         /// IComparable interface defines a generalized type-specific comparison method that 
         /// a value type or class implements to order or sort its instances.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="firstValue"></param>
-        /// <param name="secondValue"></param>
-        /// <param name="thirdValue"></param>
-        /// <returns></returns>
-
-        public static T FindMaximumGenericValue(T firstValue, T secondValue, T thirdValue)
-        {
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
-            {
-                return firstValue;
-            }
-            else if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
-            {
-                return secondValue;
-            }
-            else if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0)
-            {
-                return thirdValue;
-            }
-            else
-            {
-                //Console.WriteLine("maximum string not found i.e they are equals");
-                // return default(T);
-                throw new Exception("All three values are same");
-            }
-
+        public T[] genericArray;
+        /// <summary>
+        /// no argument constructor
+        /// </summary>
+        public FindMaximumMinimum()
+        {  
         }
-        //Maximum method
-        public  T MaximumValue()
+        /// <summary>
+        /// Parametreized Constructor 
+        /// </summary>
+        /// <param name="array"></param>
+        public FindMaximumMinimum(T [] array)
         {
-            T max = FindMaximumMinimum<T>.FindMaximumGenericValue(firstValue, secondValue, thirdValue);
-            return max;
+            this.genericArray = array;
+        }
+       /// <summary>
+       /// 
+       /// </summary>
+       /// <param name="values"></param>
+       /// <returns></returns>
+        public T[] Sort(T[] values)
+        {
+           // Sorts the elements in an entire System.Array using the System.IComparable`1 generic
+          // interface implementation of each element of the System.Array. Valid for 1D array;
+            Array.Sort(values);
+            return values;
+        }
+        /// <summary>
+        /// By using the params keyword, you can specify a method parameter that takes a variable number of arguments.
+        /// The parameter type must be a single-dimensional array.
+       /// No additional parameters are permitted after the params keyword in a method declaration,
+       /// and only one params keyword is permitted in a method declaration.
+        /// </summary>
+        /// <param name="values"></param>
+        /// <returns></returns>
+        public T MaxValue(params T[] values)
+        {
+            //calling sort method as defined above
+            T[] sortedArray = Sort(this.genericArray);
+            // return last element of sorted array as maximum;
+            return sortedArray[sortedArray.Length - 1];
+        }
+        /// <summary>
+        /// method to print MaximumValue
+        /// </summary>
+        public void PrintMax()
+        {
+            var maxValue = MaxValue(this.genericArray);
+            Console.WriteLine("The maximum value is: " + maxValue);
+
         }
     }
 }

@@ -1,102 +1,156 @@
 using FindMaximumMinimumProblemUsingGenerics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 namespace FindMaximumMinimumTest
 {
     [TestClass]
     public class UnitTest1
     {
-
         /// <summary>
         /// test cases for integer value;
         /// </summary>
         [TestMethod]
         public void GivenMaxIntegerAtFirstPositionShouldReturnTheSameValue()
         {
-            int firstNumber = 80, secondNumber = 50, thirdNumber = 67;
-            int expectedValue = firstNumber;
-            int actualValue = new FindMaximumMinimum<int>(firstNumber, secondNumber, thirdNumber).MaximumValue();
+            //Arrange
+            int[] integerArray = { 43, 33, 23, 13 };
+            int expectedValue = 43;
+            //Act
+            int actualValue = new FindMaximumMinimum<int>(integerArray).MaxValue();
+            //Assert
             Assert.AreEqual(expectedValue, actualValue);
         }
         [TestMethod]
         public void GivenMaxIntegerAtSecondPositionShouldReturnTheSameValue()
         {
-            int firstNumber = 50, secondNumber = 80, thirdNumber = 67;
-            int expectedValue = secondNumber;
-            int actualValue = new FindMaximumMinimum<int>(firstNumber, secondNumber, thirdNumber).MaximumValue();
+            //Arrange
+            int[] integerArray = { 33, 43, 23, 13 };
+            int expectedValue = 43;
+            //Act
+            int actualValue = new FindMaximumMinimum<int>(integerArray).MaxValue();
+            //Assert
             Assert.AreEqual(expectedValue, actualValue);
         }
         [TestMethod]
         public void GivenMaxIntegerAtThirdPositionShouldReturnTheSameValue()
         {
-            int firstNumber = 50, secondNumber = 80, thirdNumber = 90;
-            int expectedValue = thirdNumber;
-            int actualValue = new FindMaximumMinimum<int>(firstNumber, secondNumber, thirdNumber).MaximumValue();
-            Assert.AreEqual(expectedValue, actualValue);
-        }
-
-        /// <summary>
-        /// test cases for float value;
-        /// </summary>
-        [TestMethod]
-        public void GivenMaxFloatValueAtFirstPositionShouldReturnTheSameValue()
-        {
-            float firstNumber = 8.9f, secondNumber = 4.5f, thirdNumber = 6.7f;
-            float expectedValue = firstNumber;
-            float actualValue = new FindMaximumMinimum<float>(firstNumber, secondNumber, thirdNumber).MaximumValue();
-            Assert.AreEqual(expectedValue, actualValue);
-        }
-        [TestMethod]
-        public void GivenMaxFloatValueAtSecondPositionShouldReturnTheSameValue()
-        {
-            float firstNumber = 4.5f, secondNumber = 8.9f, thirdNumber = 6.7f;
-            float expectedValue = secondNumber;
-            float actualValue = new FindMaximumMinimum<float>(firstNumber, secondNumber, thirdNumber).MaximumValue();
-            Assert.AreEqual(expectedValue, actualValue);
-        }
-        [TestMethod]
-        public void GivenMaxFloatValueAtThirdPositionShouldReturnTheSameValue()
-        {
-            float firstNumber = 4.5f, secondNumber = 6.7f, thirdNumber = 8.9f;
-            float expectedValue = thirdNumber;
-
-            float actualValue = new FindMaximumMinimum<float>(firstNumber, secondNumber, thirdNumber).MaximumValue();
-            Assert.AreEqual(expectedValue, actualValue);
-        }
-
-
-        /// <summary>
-        /// test cases for string value;
-        /// </summary>
-        [TestMethod]
-        public void GivenMaxStringAtFirstPositionShouldReturnTheSameValue()
-        {
-            string firstString = "Peach", secondString = "Apple", thirdString = "Bananna";
-            string expectedValue = firstString;
-            string actualValue = new FindMaximumMinimum<string>(firstString, secondString, thirdString).MaximumValue();
-            Assert.AreEqual(expectedValue, actualValue);
-        }
-
-        [TestMethod]
-        public void GivenMaxStringAtSecondPositionShouldReturnTheSameValue()
-        {
-            string firstString = "Apple", secondString = "Peach", thirdString = "Bananna";
-            string expectedValue = secondString;
-            string actualValue = new FindMaximumMinimum<string>(firstString, secondString, thirdString).MaximumValue();
-            Assert.AreEqual(expectedValue, actualValue);
-        }
-
-        [TestMethod]
-        public void GivenMaxStringAtThirdPositionShouldReturnTheSameValue()
-        {
             //Arrange
-            string firstString = "Apple", secondString = "Bananna", thirdString = "Peach";
-            string expectedValue = thirdString;
+            int[] integerArray = { 23, 33, 43, 13 };
+            int expectedValue = 43;
             //Act
-            string actualValue = new FindMaximumMinimum<string>(firstString, secondString, thirdString).MaximumValue();
+            int actualValue = new FindMaximumMinimum<int>(integerArray).MaxValue();
             //Assert
             Assert.AreEqual(expectedValue, actualValue);
         }
-
+        [TestMethod]
+        public void GivenMaxIntegerAtFourthPositionShouldReturnTheSameValue()
+        {
+            //Arrange
+            int[] integerArray = { 13, 33, 23, 43 };
+            int expectedValue = 43;
+            //Act
+            int actualValue = new FindMaximumMinimum<int>(integerArray).MaxValue();
+            //Assert
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+        /// <summary>
+        /// method for checking float value;
+        /// </summary>
+        [TestMethod]
+        public void GivenMaxFloatAtFirstPositionShouldReturnTheSameValue()
+        {
+            //Arrange
+            float[] floatArray = { 4.3f, 3.3f, 2.3f, 1.3f };
+            float expectedValue = 4.3f;
+            //Act
+            float actualValue = new FindMaximumMinimum<float>(floatArray).MaxValue();
+            //Assert
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+        /// <summary>
+        /// method for checking float value;
+        /// </summary>
+        [TestMethod]
+        public void GivenMaxFloatAtSecondPositionShouldReturnTheSameValue()
+        {
+            //Arrange
+            float[] floatArray = { 3.3f, 4.3f, 2.3f, 1.3f };
+            float expectedValue = 4.3f;
+            //Act
+            float actualValue = new FindMaximumMinimum<float>(floatArray).MaxValue();
+            //Assert
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+        /// <summary>
+        /// method for checking float value;
+        /// </summary>
+        [TestMethod]
+        public void GivenMaxFloatAtThirdPositionShouldReturnTheSameValue()
+        {
+            //Arrange
+            float[] floatArray = { 2.3f, 3.3f, 4.3f, 1.3f };
+            float expectedValue = 4.3f;
+            //Act
+            float actualValue = new FindMaximumMinimum<float>(floatArray).MaxValue();
+            //Assert
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+        /// <summary>
+        /// method for checking float value;
+        /// </summary>
+        [TestMethod]
+        public void GivenMaxFloatAtFourthPositionShouldReturnTheSameValue()
+        {
+            //Arrange
+            float[] floatArray = { 1.3f, 3.3f, 2.3f, 4.3f };
+            float expectedValue = 4.3f;
+            //Act
+            float actualValue = new FindMaximumMinimum<float>(floatArray).MaxValue();
+            //Assert
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+        [TestMethod]
+        public void GivenMaximumStringValueAtFirstPosition_ItShouldReturnExpectedValue()
+        {
+            /// Arrange
+            string[] stringArray = { "Peach", "Apple", "Bannana", "Grapes" };
+            string expected = "Peach";
+            /// Act
+            string actualValue = new FindMaximumMinimum<string>(stringArray).MaxValue();
+            /// Assert
+            Assert.AreEqual(expected, actualValue);
+        }
+        [TestMethod]
+        public void GivenMaximumStringValueAtSecondPosition_ItShouldReturnExpectedValue()
+        {
+            /// Arrange
+            string[] stringArray = { "Apple", "Peach", "Bannana", "Grapes" };
+            string expected = "Peach";
+            /// Act
+            string actualValue = new FindMaximumMinimum<string>(stringArray).MaxValue();
+            /// Assert
+            Assert.AreEqual(expected, actualValue);
+        }
+        [TestMethod]
+        public void GivenMaximumStringValueAtThirdPosition_ItShouldReturnExpectedValue()
+        {
+            /// Arrange
+            string[] stringArray = { "Bannana", "Apple", "Peach", "Grapes" };
+            string expected = "Peach";
+            /// Act
+            string actualValue = new FindMaximumMinimum<string>(stringArray).MaxValue();
+            /// Assert
+            Assert.AreEqual(expected, actualValue);
+        }
+        [TestMethod]
+        public void GivenMaximumStringValueAtFourthPosition_ItShouldReturnExpectedValue()
+        {
+            /// Arrange
+            string[] stringArray = { "Grapes", "Apple", "Bannana", "Peach" };
+            string expected = "Peach";
+            /// Act
+            string actualValue = new FindMaximumMinimum<string>(stringArray).MaxValue();
+            /// Assert
+            Assert.AreEqual(expected, actualValue);
+        }
     }
 }
