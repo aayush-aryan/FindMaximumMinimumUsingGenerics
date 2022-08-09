@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
 namespace FindMaximumMinimumProblemUsingGenerics
 {
     public class FindMaximumMinimum<T> where T : IComparable
@@ -59,7 +58,6 @@ namespace FindMaximumMinimumProblemUsingGenerics
         {
             var maxValue = MaxValue(this.genericArray);
             Console.WriteLine("The maximum value is: " + maxValue);
-
         }
     }
 }
